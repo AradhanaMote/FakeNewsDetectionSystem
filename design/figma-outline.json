@@ -1,0 +1,43 @@
+{
+  "components": {
+    "AppShell": { "parts": ["TopBar", "LeftRail", "Content", "RightPanel"] },
+    "TopBar": {
+      "props": { "title": "string" },
+      "slots": ["Brand", "SearchInput", "Actions"],
+      "children": ["Brand", "SearchInput", "IconButton:Bell", "AvatarMenu"]
+    },
+    "Filters": {
+      "children": ["LabelChips", "ConfidenceSlider", "TimeRange", "DomainTokenInput", "TagsMultiSelect", "ResetButton", "SaveViewButton"]
+    },
+    "ArticleCard": {
+      "props": { "title": "string", "domain": "string", "label": "Real|Fake|Suspect", "confidence": "0..1", "virality": "0..1", "time": "ISO" },
+      "children": ["Title", "DomainBadge", "LabelChip", "Snippet", "ConfidenceRibbon", "ViralityBadge", "Timestamp", "QuickActions"]
+    },
+    "LabelChip": { "variants": ["Real", "Fake", "Suspect"] },
+    "ConfidenceRibbon": { "props": { "value": "0..1" } },
+    "ViralityBadge": { "props": { "value": "0..1" } },
+    "DomainCredCard": { "props": { "domain": "string", "trust": "0..100", "publishedCount": "number", "tags": "string[]" } },
+    "ViralityGauge": { "props": { "value": "0..1" } },
+    "Sparkline": { "props": { "data": "number[]" } },
+    "TokenHighlight": { "props": { "text": "string", "tokens": "[token,weight][]" } },
+    "LiveUpdateToast": { "props": { "count": "number" } },
+    "SkeletonCard": {},
+    "DetailPanel": { "tabs": ["Overview", "Explain", "Social", "Notes"] },
+    "Notes": { "children": ["NotesList", "NoteInput"] },
+    "ActionBar": { "children": ["AcceptButton", "RejectButton", "ShareButton"] },
+    "ReviewerQueue": {
+      "children": ["BulkBar", "QueueTable", "CSVExportButton", "SearchInput", "TagFilter"],
+      "row": ["Checkbox", "TitleLink", "Label", "Confidence", "Virality", "Actions"]
+    },
+    "Overlays": { "children": ["ConfirmDialog", "Snackbar", "HelpModal"] },
+    "Icons": ["Search", "Bell", "Check", "Close", "Share", "Filter", "Tag", "Clock", "TrendUp"]
+  },
+  "spacing": { "base": 8, "scale": [4, 8, 12, 16, 24, 32, 48] },
+  "colors": {
+    "bg": { "light": "#FAFAFA", "dark": "#0A0A0A" },
+    "text": { "primary": "#111827", "secondary": "#4B5563" },
+    "label": { "real": "#22C55E", "fake": "#EF4444", "suspect": "#F59E0B" },
+    "borders": "#E5E7EB"
+  },
+  "typography": { "h1": "20/28 semibold", "h2": "16/24 semibold", "body": "14/20", "caption": "12/16" }
+}

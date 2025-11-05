@@ -1,0 +1,48 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Ingestion Rate (msg/s)",
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 0 },
+      "targets": [
+        { "expr": "sum(rate(kafka_server_brokertopicmetrics_messagesin_total[5m]))", "legendFormat": "rate" }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Queue Depth (ml_inference)",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
+      "targets": [
+        { "expr": "rq_jobs_queued{queue=\"ml_inference\"}", "legendFormat": "depth" }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Average Inference Latency (s)",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
+      "targets": [
+        { "expr": "rate(model_inference_seconds_sum[5m]) / rate(model_inference_seconds_count[5m])", "legendFormat": "avg" }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "False Positive Rate (placeholder)",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 8 },
+      "targets": [
+        { "expr": "0 * time()", "legendFormat": "fpr" }
+      ]
+    }
+  ],
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["fake-news"],
+  "templating": { "list": [] },
+  "time": { "from": "now-6h", "to": "now" },
+  "timepicker": {},
+  "title": "Fake News Observability",
+  "version": 1
+}

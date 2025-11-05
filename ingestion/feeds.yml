@@ -1,0 +1,5 @@
+feeds:
+  - https://rss.cnn.com/rss/edition.rss
+  - https://feeds.bbci.co.uk/news/rss.xml
+  - https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+  - https://www.aljazeera.com/xml/rss/all.xml

@@ -1,0 +1,23 @@
+﻿fastapi==0.115.0
+uvicorn[standard]==0.30.6
+numpy==2.1.1
+scikit-learn==1.5.2
+joblib==1.4.2
+pydantic==2.9.2
+kafka-python==2.0.2
+redis==5.0.8
+newspaper3k==0.2.8
+feedparser==6.0.11
+PyYAML==6.0.2
+requests==2.32.3
+beautifulsoup4==4.12.3
+langdetect==1.0.9
+pymongo==4.8.0
+rq==1.16.2
+transformers==4.44.2
+torch==2.8.0
+structlog==24.1.0
+prometheus_client==0.20.0
+# Optional vector DB clients:
+# pinecone-client==3.2.2
+# pymilvus==2.4.6
