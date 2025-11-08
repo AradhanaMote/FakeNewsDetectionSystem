@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Dependencies first for better caching
 COPY requirements.txt ./
 RUN pip install --no-cache-dir --upgrade pip \
+ && pip install --no-cache-dir gunicorn uvicorn \
  && pip install --no-cache-dir -r requirements.txt
 
 # Pre-download transformer model weights when available (best effort)
